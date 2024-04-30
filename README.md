@@ -42,3 +42,4 @@ Project is based on Empty ASP.NET Core API template and below features are later
 - add some functional libraries (for null check, optionality + exception checks using https://github.com/louthy/language-ext)
 - explore using Record feature from C# 9 (for Model)
 - change tests to use the same DepInjection as main ASPNET.Core
+- add retry logic
