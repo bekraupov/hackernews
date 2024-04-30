@@ -31,3 +31,4 @@ Project is based on Empty ASP.NET Core API template and below features are later
 - Move from inmem cache to out of procss cache (so that we dont duplicate mem storage on each process)
 - add webhook option so that we can refresh best stories cache on change (as opposed to periodic set)
 - add some functional libraries (for null check, optionality + exception checks using https://github.com/louthy/language-ext)
+- explore using Record feature from C# 9 (for Model)
