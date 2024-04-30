@@ -2,7 +2,7 @@
 
 poc for hacker news, will use HackerNews API to retrive N best stories
 
-## How To Build 
+## How To Debug/Build  Locally
 
 ###  Prerequisuites 
 
@@ -10,17 +10,26 @@ You will need below to build it locally:
 - VS 2022 (or close to it)
 - .NET core 8 LTS 
 
+### Run Locally
+
+- When you compile and run, swagger should be avaiable at localhost:5099/swagger which you can use to trigger REST methods
+- or you cna curl on below:
+```
+http://localhost:5099/Story?topX=3
+```
+
 ## Build out 
 
 Project is based on Empty ASP.NET Core API template and below features are later on added:
 
-- 
+- AutoMapper (to map from Proxy to Model, and model from Dto)
+- added test cases (integ testes + unit test to mock)
 
 
 ## Assumptions 
 
 - Set best stories cache to 5 min so that we dont hit downstream server to freq (i presume they dont change stories that fast)
-- Enable eviction policy on in mem cache so that it doesnt blow up (set to 1000 stories)
+- Enable eviction policy on in mem cache so that it doesnt blow up (set to 1000 stories or smth)
 
 
 
