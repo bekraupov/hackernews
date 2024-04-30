@@ -1,4 +1,5 @@
 ﻿using hackernews.Core.Model;
+using hackernews.Core.Proxy;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -15,6 +16,8 @@ namespace hackernews.Core.Service
         /// </summary>
         /// <returns></returns>
         Task<int[]> GetBestStoryIds();
+
+        Task<StoryResponse> GetStory(int storyId);
     }
 
     /// <summary>
@@ -33,6 +36,12 @@ namespace hackernews.Core.Service
         {
             var httpClient = _httpClientFactory.CreateClient(MagicStrings.HackerNewsHttpClientFactory);
             return await httpClient.GetFromJsonAsync<int[]>("beststories.json");
+        }
+
+        public async Task<StoryResponse> GetStory(int storyId)
+        {
+            var httpClient = _httpClientFactory.CreateClient(MagicStrings.HackerNewsHttpClientFactory);
+            return await httpClient.GetFromJsonAsync<StoryResponse>($"item/{storyId}.json");
         }
     }
 }
